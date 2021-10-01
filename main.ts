@@ -18,3 +18,16 @@ basic.forever(function () {
         basic.pause(200)
     }
 })
+basic.forever(function () {
+    if (CrocoKit_Sensor.IR(DigitalPin.P1, CrocoKit_Sensor.enObstacle.Obstacle)) {
+        basic.showIcon(IconNames.Heart)
+    } else {
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . . . .
+            # . . . #
+            . # # # .
+            `)
+    }
+})
